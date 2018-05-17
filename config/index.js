@@ -3,8 +3,8 @@ var path = require('path')
 
 module.exports = {
 
-  // 网站模块名
-  moduleName:'pages',
+  // 网站模块名，必须要与 /src/pages 保持一致
+  moduleName:'views',
   
   build: {
     env: require('./prod.env'),
@@ -27,7 +27,7 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8091,
+    port: 8099,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
