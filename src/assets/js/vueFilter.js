@@ -1,6 +1,6 @@
 /*
  * vuejs 	过滤器
- * time 	2017年1月18日 18:46:54
+ * time 	2018-05-18 11:02:35
  */
 
 import Vue from 'vue';
