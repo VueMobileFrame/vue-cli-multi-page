@@ -8,7 +8,7 @@
 
 3、新建页面，需重新`npm run dev`才可以正常访问新建的页面。
 
-4、`npm run dev`将会自动在浏览器打开页面，如未正常打开，请访问完整的路径`http:// localhost:8091/views/home/list.html`
+4、`npm run dev`将会自动在浏览器打开页面，如未正常打开，请访问完整的路径`http://localhost:8091/views/home/list.html`
 
 
 ## 前言
@@ -18,15 +18,6 @@
 
 这一次我们基于`vuejs2+webpack2+vuxui2`(好222的项目)重新发布了全新的vue脚手架，同时还支持二级目录，以解决页面比较多时，便于归类查找的问题。基于webpack2，构建速度高。ajax获取数据，使用`axios`，当然还有其他的优化，咱们先看看demo呗。
 
-demo地址：
-http://v.lanchenglv.com/demo/vue2-cli-vux2-multe-page/views/home/list.html
-
-github地址：
-https://github.com/bluefox1688/vue-cli-multi-page
-
-** 此版仅支持vu2.0，如果需要vue1.0多页面脚手架，请访问分支 **
-https://github.com/bluefox1688/vue-cli-multi-page/tree/master 
-
 ## 2.0的主要功能
 
  1. 全局统一使用的模块`Lib.js`库
@@ -34,7 +25,7 @@ https://github.com/bluefox1688/vue-cli-multi-page/tree/master
  3. 构建时，增加对css打包的支持
  4. 提取公共模块
  5. 多页面可使用vue-router2路由
- 6. 可自定义页面模块名，例如 http:// localhost:8091/`views`/home/list.html，`views`就是我们线上的模块名，1.0版只能固定的
+ 6. 可自定义页面模块名，例如 http:// localhost:8091/`views`/home/list.html，`views`就是我们线上的模块名
  7. 支持二级目录，便于归类，1.0版本暂时仅支持一级目录
  8. 模块下静态文件可直接调用
  9. 发送ajax请求，使用`axios`库，简单封装了一个库，为了减少学习成本，封装参数基本与`JQ ajax`一致，如果不需要可直接删除
@@ -157,20 +148,3 @@ Lib.C.appname;  #蓝橙绿
 我们通常会把常用的库都打包成公共模块，`CommonsChunkPlugin` 插件，是一个可选的用于建立一个独立文件(又称作 chunk)的功能，这个文件包括多个入口 chunk 的公共模块。最终合成的文件能够在最开始的时候加载一次，便存起来到缓存中供后续使用。这个带来速度上的提升，因为浏览器会迅速将公共的代码从缓存中取出来，而不是每次访问一个新页面时，再去加载一个更大的文件。
 
 不同的项目，使用到的插件库数量有所不同，我们可以调整`minChunks`以达到公共模块的大小，文件路径为`/build/webpack.prod.conf.js`，cart+F查找`minChunks`参数，`minChunks: 4` 意思代表为至少被4个页面引用了，就打包进入公共模块，具体的使用方法，可以再详细了解`webpack`中文文档。http://www.css88.com/doc/webpack2/plugins/commons-chunk-plugin/
-
-## 存在的问题
-1、多页面可以使用vue-router路由，但是无法使用按需加载，即懒加载，研究过在多页面的路由里按需加载，但从未成功，如果有童鞋研究成功了，可以发lssues一起交流哈。
-
-2、暂时还没有做css自动补前缀
-
-3、......
-
-## 结束言
-此vue多页面脚手架，并不局限于vux ui 框架，但现在的UI框架都要自己对webpack简单配置下。
-
-生命在于折腾，理想还是要有的，万一实现了呢。
-
-有问题随时Issues哈！
-
-## 文章首发地址：
-http://lanchenglv.com/article/2017/0409/vue2-webpack2-cli-vux2-multe-page.html
